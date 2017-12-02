@@ -1,0 +1,56 @@
+<!doctype html>
+<head>
+<title>LED</title>
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+<style>/*!v3.6.3*/.c-range{width:100%;padding:.5em 0;outline:0;-webkit-appearance:none}.c-range:not(:disabled)::-webkit-slider-runnable-track{background-color:#96a8b2}.c-range:not(:disabled)::-moz-range-track{background-color:#96a8b2}.c-range:not(:disabled)::-ms-track{background-color:#96a8b2}.c-range--brand:not(:disabled)::-webkit-slider-runnable-track{background-color:#2c3e50}.c-range--brand:not(:disabled)::-moz-range-track{background-color:#2c3e50}.c-range--brand:not(:disabled)::-ms-track{background-color:#2c3e50}.c-range--info:not(:disabled)::-webkit-slider-runnable-track{background-color:#2196f3}.c-range--info:not(:disabled)::-moz-range-track{background-color:#2196f3}.c-range--info:not(:disabled)::-ms-track{background-color:#2196f3}.c-range--warning:not(:disabled)::-webkit-slider-runnable-track{background-color:#ff9800}.c-range--warning:not(:disabled)::-moz-range-track{background-color:#ff9800}.c-range--warning:not(:disabled)::-ms-track{background-color:#ff9800}.c-range--success:not(:disabled)::-webkit-slider-runnable-track{background-color:#4caf50}.c-range--success:not(:disabled)::-moz-range-track{background-color:#4caf50}.c-range--success:not(:disabled)::-ms-track{background-color:#4caf50}.c-range--error:not(:disabled)::-webkit-slider-runnable-track{background-color:#f44336}.c-range--error:not(:disabled)::-moz-range-track{background-color:#f44336}.c-range--error:not(:disabled)::-ms-track{background-color:#f44336}.c-range::-webkit-slider-runnable-track{width:100%;height:10px;border:0;border-radius:30em;box-shadow:none;cursor:pointer}.c-range::-webkit-slider-thumb{width:20px;height:20px;margin:-5px 0 0;border:0;border-radius:30em;background-color:#fff;box-shadow:0 1px 4px -1px #111;cursor:pointer;-webkit-appearance:none}.c-range::-moz-range-track{width:100%;height:10px;border:0;border-radius:30em;box-shadow:none;cursor:pointer}.c-range::-moz-range-thumb{width:20px;height:20px;margin:-5px 0 0;border:0;border-radius:30em;background-color:#fff;box-shadow:0 1px 4px -1px #111;cursor:pointer}.c-range::-ms-track{width:100%;height:10px;border:0;border-radius:30em;box-shadow:none;cursor:pointer;border-color:transparent;background-color:transparent;color:transparent}.c-range::-ms-fill-lower,.c-range::-ms-fill-upper{border:0;border-radius:30em;background-color:#96a8b2;box-shadow:none}.c-range::-ms-thumb{width:20px;height:20px;margin:-5px 0 0;border:0;border-radius:30em;background-color:#fff;box-shadow:0 1px 4px -1px #111;cursor:pointer}.c-range:not(:disabled):active::-webkit-slider-thumb{transform:scale(1.4)}.c-range:not(:disabled):active::-moz-range-thumb{transform:scale(1.4)}.c-range:not(:disabled):active::-ms-thumb{transform:scale(1.4)}.c-range:focus::-webkit-slider-thumb{border-color:#2196f3;box-shadow:inset 0 0 0 2px #4dabf5}.c-range:focus::-moz-range-thumb{border-color:#2196f3;box-shadow:inset 0 0 0 2px #4dabf5}.c-range:focus::-ms-thumb{border-color:#2196f3;box-shadow:inset 0 0 0 2px #4dabf5}.c-range:disabled::-webkit-slider-runnable-track,.c-range:disabled::-webkit-slider-thumb{background-color:#e5eaec;cursor:not-allowed}.c-range:disabled::-moz-range-thumb,.c-range:disabled::-moz-range-track{background-color:#e5eaec;cursor:not-allowed}.c-range:disabled::-ms-thumb,.c-range:disabled::-ms-track{background-color:#e5eaec;cursor:not-allowed}</style>
+<style>
+.content{
+	margin: 0 auto;
+	padding: 0 2em;
+	
+}
+
+</style>
+</head>
+
+<body>
+	<div class="content">
+	
+	
+	<h1>LED METRIX</h1> 
+	<form method=POST action="/text/scrolling/" class="pure-form pure-form-aligned pure-u-1-5">
+		<fieldset>
+		<div class="pure-control-group ">
+			<input id="texto" name="texto" placeholder="Texto para mostrar!" required class="pure-input-1">
+		</div>
+		
+		<div class="pure-control-group">
+			<select id="font" name="font" class="pure-input-1">
+				<option value=0 selected>CP437_FONT</option>
+				<option value=1>TINY_FONT</option>
+				<option value=2>SINCLAIR_FONT</option>
+				<option value=3>LCD_FONT</option>
+			</select>
+		</div>
+		
+        <div class="pure-control-group ">
+			<input type="range" class="c-range c-range--brand" name="speed" value=4 max=10  min=1 >
+		</div>
+		<div class="pure-controls ">
+		<input class="pure-button pure-button-primary" type="submit">
+		</div>
+		</fieldset>
+		
+		
+	</form>
+	
+	</div>
+	<br>
+<!--
+	<form method=POST action="/text/static">
+		<label for="Texto">Estatico</label>
+		<input id="Texto" name="texto">
+		<input class="pure-button pure-button-primary"  type="submit">
+	</form>
+-->
+</body>

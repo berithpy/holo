@@ -19,6 +19,8 @@ DIN gris 10 mosi
 cs lila 8 ceo
 clk azul 11 sclk
 """
+
+
 def staticText(device,msg):
 	with canvas(device) as draw:
 		text(draw, (0, 0), msg, fill="white")
@@ -52,8 +54,14 @@ def keyboard_2(device):
 		pass
 	else:
 		pass
+		
+def scrolling_text_flask(msg,speed,font_index=1):
+	serial = spi(port=0, device=0, gpio=noop())
+	device = max7219(serial, cascaded=4, block_orientation=-90, rotate=0)
+	fonts=[CP437_FONT, TINY_FONT, SINCLAIR_FONT, LCD_FONT]
+	scrolling_text(device,msg,speed,fonts[font_index])
 			
-			
+
 if __name__ == "__main__":
 	serial = spi(port=0, device=0, gpio=noop())
 	device = max7219(serial, cascaded=4, block_orientation=-90, rotate=0)
@@ -64,7 +72,8 @@ if __name__ == "__main__":
 		#speed = input("velocidad")
 		#mensaje = str(input("mensaje"))
 		#scrolling_text(device,mensaje,speed,fonts[fi])
-		#x=input()
-		#ascii_char(device,x)
-		with canvas(device) as draw:
-			text(draw, (0, 0), "R", fill="white")
+		#scrolling_text(device,mensaje)
+		x=input()
+		ascii_char(device,x)
+		#with canvas(device) as draw:
+		#	text(draw, (0, 0), "R", fill="white")
