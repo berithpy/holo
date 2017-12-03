@@ -1,4 +1,4 @@
-from flask import Flask, request, Response,render_template,redirect
+from flask import Flask, request, Response,render_template,redirect, url_for
 from matrix import scrolling_text_flask
 from werkzeug.contrib.fixers import ProxyFix
 app = Flask(__name__)
@@ -15,8 +15,10 @@ def api():
 		font=int(request.form.get('font'))
 		print("speed {} font {}".format(speed,font))
 		scrolling_text_flask(msg,speed,font)
-		return redirect('/',code=302)
+		return redirect(url_for('index'),code=302)
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=5123)
+
+
